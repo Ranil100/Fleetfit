@@ -5,7 +5,7 @@ from passlib.context import CryptContext
 
 # 1. Setup Password Hashing Context
 # Tells passlib to use the bcrypt algorithm under the hood
-pwd_context = CryptContext(schemas=["bcrypt"], deprecated="auto")    
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")    
 
 # 2. JWT Configuration Variables
 # Security Notice: Keep this secret key completely private in production!
