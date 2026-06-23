@@ -15,7 +15,7 @@ class User(Base):
 
     # relationships
     workouts = relationship("WorkoutLog", back_populates="user")
-    trained_classes = relationship("ClassSchedule", back_populates="user")
+    trained_classes = relationship("ClassSchedule", back_populates="trainer")
 
 
 class WorkoutLog(Base):
@@ -29,7 +29,7 @@ class WorkoutLog(Base):
     notes = Column(Text, nullable=True)
     date = Column(DateTime, default=datetime.utcnow)
 
-    owner = relationship("User", back_populates="workouts")
+    user = relationship("User", back_populates="workouts")
 
 class ClassSchedule(Base):
     __tablename__ = "class_schedules"
