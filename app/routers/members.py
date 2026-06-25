@@ -71,3 +71,4 @@ def login_user(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = D
     
     # 4. Return the token according to the structural schema shape expected by Pydantic
     return {"access_token": access_token, "token_type": "bearer"}
+
